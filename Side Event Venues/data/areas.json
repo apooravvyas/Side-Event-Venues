@@ -1,0 +1,49 @@
+{
+ "anchors": [
+  {"id": "ibw", "label": "IBW 2026", "venue": "Fairmont Mumbai", "dates": "Nov 1–2", "lat": 19.1022079, "lng": 72.8769625, "radiusKm": 3},
+  {"id": "devcon", "label": "Devcon 8", "venue": "Jio World Centre", "dates": "Nov 3–6", "lat": 19.0630565, "lng": 72.8670307, "radiusKm": 3}
+ ],
+ "areas": [
+  {"id": "sahar", "name": "Sahar & Andheri East", "role": "IBW zone", "blurb": "The airport hotel belt where IBW happens on Nov 1–2: Fairmont, JW Marriott, the Leela, ITC Maratha and Marol's 24-hour coworking. Ballrooms, lawns and hotel dinners.", "lat": 19.105, "lng": 72.876, "zoom": 13.4},
+  {"id": "powai", "name": "Powai", "role": "Builder belt", "blurb": "Fifteen minutes east of Fairmont along the lake: IIT Bombay, Hiranandani, WeWork, padel and go-karts, and India's largest hotel convention centre. Hackathon country.", "lat": 19.122, "lng": 72.905, "zoom": 13.2},
+  {"id": "santacruz", "name": "Santacruz & Vakola", "role": "The bridge", "blurb": "Between the two anchors on the Western Express Highway: Grand Hyatt's 12 acres and Taj Santacruz. Where an event on Nov 2 evening can catch both crowds.", "lat": 19.084, "lng": 72.853, "zoom": 13.6},
+  {"id": "bkc", "name": "BKC", "role": "Devcon zone", "blurb": "Nov 3–6 lives here. Jio World Centre, NMACC and Jio World Garden, walkable hotels (Sofitel, Trident), O Pedro and Yauatcha for dinner, WeWork for workshops.", "lat": 19.064, "lng": 72.866, "zoom": 14.2},
+  {"id": "bandra", "name": "Bandra & Khar", "role": "Culture & nightlife", "blurb": "Fifteen minutes west of BKC: Olive's courtyard parties, Subko's cafés, The Habitat's talk rooms, Taj Lands End on the Sea Link. Intimate community events and afterparties.", "lat": 19.06, "lng": 72.83, "zoom": 13.6},
+  {"id": "juhu", "name": "Juhu", "role": "The beach", "blurb": "Sunset on the Arabian Sea, 25 minutes from either anchor. JW Marriott's lawns and Estella's deck are the closest Mumbai gets to a beach-club side event.", "lat": 19.098, "lng": 72.828, "zoom": 13.8},
+  {"id": "parel", "name": "Lower Parel, Worli & Mahalaxmi", "role": "Destination night", "blurb": "Forty-five minutes south when traffic behaves: Bombay Canteen, antiSOCIAL, AER, Asilo, G5A, Tote on the Turf, Smaaash. Best for one deliberate destination evening, not the daily default.", "lat": 18.996, "lng": 72.824, "zoom": 13.6},
+  {"id": "east", "name": "Kurla & Chembur", "role": "Sports edge", "blurb": "East of BKC along the Santacruz–Chembur Link Road: turfs and padel courts that sit between both anchors on the map, if not on anyone's mental map yet.", "lat": 19.065, "lng": 72.9, "zoom": 13.2}
+ ],
+ "eventTypes": [
+  {"id": "mixer", "emoji": "🥂", "label": "Mixer"},
+  {"id": "party", "emoji": "🎉", "label": "Party"},
+  {"id": "dinner", "emoji": "🍽️", "label": "Dinner"},
+  {"id": "workshop", "emoji": "🧠", "label": "Workshop"},
+  {"id": "hackathon", "emoji": "💻", "label": "Hackathon"},
+  {"id": "panel", "emoji": "🎤", "label": "Panel / Talk"},
+  {"id": "builder", "emoji": "🏗️", "label": "Builder Meetup"},
+  {"id": "sports", "emoji": "⚽", "label": "Sports Event"},
+  {"id": "creative", "emoji": "🎨", "label": "Creative Event"},
+  {"id": "afterparty", "emoji": "🌃", "label": "Afterparty"}
+ ],
+ "categories": [
+  {"id": "hotel", "label": "Hotels & convention", "color": "#D8C7A4"},
+  {"id": "restaurant", "label": "Restaurants", "color": "#E9A27B"},
+  {"id": "bar", "label": "Bars & nightlife", "color": "#B893DD"},
+  {"id": "rooftop", "label": "Rooftops", "color": "#7FC4D6"},
+  {"id": "cafe", "label": "Cafés", "color": "#CDB55E"},
+  {"id": "sports", "label": "Sports & activity", "color": "#7ED0A0"},
+  {"id": "creative", "label": "Creative & cultural", "color": "#E38199"},
+  {"id": "cowork", "label": "Coworking & builder", "color": "#8FA9E0"}
+ ],
+ "factorLabels": {
+  "capacity": "Capacity", "accessibility": "Accessibility", "infrastructure": "Infrastructure", "booking": "Booking flexibility",
+  "atmosphere": "Atmosphere", "networking": "Networking", "fnb": "Food & beverage", "hours": "Operating hours", "location": "Location", "value": "Value"
+ },
+ "patterns": [
+  {"format": "Investor breakfast / executive dinner", "size": "15–60", "mumbai": "Masala Library, Trident BKC, Bombay Canteen, ITC Maratha"},
+  {"format": "Technical workshop, hacker house", "size": "30–150", "mumbai": "WeWork BKC, 91springboard Marol, WeWork Powai, Renaissance Powai"},
+  {"format": "Rooftop or beach-club takeover", "size": "100–400", "mumbai": "AER, Asilo, Estella, Olive Bar & Kitchen"},
+  {"format": "Headline party", "size": "300–1,000", "mumbai": "antiSOCIAL, Grand Hyatt lawns, Sofitel Hriday lawn, JW Sahar"},
+  {"format": "Padel morning / run club", "size": "16–60", "mumbai": "Padel Project Powai, NSCI PadelPark, The Courtroom"}
+ ]
+}
