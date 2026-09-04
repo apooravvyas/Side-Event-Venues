@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SIDEQUEST — Where to host your side event in Mumbai · IBW + Devcon 2026</title>
+<meta name="description" content="A map of 42 Mumbai venues scored for hosting Web3 and AI side events during India Blockchain Week (Nov 1–2, Fairmont) and Devcon 8 (Nov 3–6, Jio World Centre). Tell it what you're hosting, where and for how many.">
+<meta property="og:title" content="SIDEQUEST — Where to host your side event in Mumbai">
+<meta property="og:description" content="42 venues, scored on evidence, for Web3 and AI side events during IBW + Devcon 2026. Founder dinners, hackathons, rooftops, padel, afterparties.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://side-event-venues.vercel.app/">
+<meta property="og:image" content="https://side-event-venues.vercel.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="SIDEQUEST — a map of Mumbai side-event venues around IBW and Devcon.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SIDEQUEST — Where to host your side event in Mumbai">
+<meta name="twitter:description" content="42 venues, scored on evidence, for Web3 and AI side events during IBW + Devcon 2026.">
+<meta name="twitter:image" content="https://side-event-venues.vercel.app/og.png">
+<meta name="theme-color" content="#0b0b0c">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230b0b0c'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23e63329'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="masthead">
+  <a class="brand" href="./" id="brand"><i></i>SIDEQUEST</a>
+  <nav class="brief" id="briefBar" aria-label="Your brief"></nav>
+  <div class="mr">
+    <button class="ghost" id="howBtn">How it scores</button>
+    <div class="tabs" id="tabs">
+      <button data-view="list" aria-pressed="true">List</button>
+      <button data-view="map" aria-pressed="false">Map</button>
+    </div>
+  </div>
+</header>
+
+<main class="app" id="app">
+  <aside class="rail" id="rail">
+    <div class="refine" id="refine"></div>
+    <div class="rail-scroll" id="railScroll"></div>
+    <section class="venue" id="venue" hidden></section>
+  </aside>
+  <div class="stage">
+    <div id="map" role="region" aria-label="Map of Mumbai side-event venues"></div>
+    <div class="key" id="key"></div>
+  </div>
+</main>
+
+<!-- ── Landing poster ─────────────────────────────────── -->
+<section class="landing" id="landing">
+  <div class="poster">
+    <div class="p-top">
+      <div class="lg"><i></i>SIDEQUEST</div>
+      <div class="meta">Mumbai · 1–6 November 2026<br>India Blockchain Week + Devcon 8</div>
+    </div>
+
+    <div class="p-mid">
+      <div class="p-left">
+        <h1 class="p-h1">Where to host<br>your <em>side event</em><br>in Mumbai.</h1>
+        <p class="p-lede">Forty-two venues across the city, each researched and scored for one question: <b>can you actually hold your event here?</b> Built for the Web3 and AI crowd landing for IBW and Devcon.</p>
+
+        <div class="dates">
+          <div>
+            <div class="num">01<em>—</em>02</div>
+            <div class="ev">India Blockchain Week</div>
+            <div class="pl">Fairmont Mumbai · Sahar</div>
+          </div>
+          <div>
+            <div class="num">03<em>—</em>06</div>
+            <div class="ev">Devcon 8</div>
+            <div class="pl">Jio World Centre · BKC</div>
+          </div>
+        </div>
+
+        <div class="ask">
+          <p class="q">What are you hosting?</p>
+          <div class="qgrid" id="qgrid"></div>
+          <div class="cta-row">
+            <button class="cta" id="explore">Open the map<s>42 venues</s></button>
+            <button class="alt" id="howBtn2">How it scores</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-right">
+        <div class="bento" id="bento"></div>
+        <div class="cats" id="cats"></div>
+      </div>
+    </div>
+
+    <div class="p-bot">
+      <span>Evidence-based · unknown stays unknown</span>
+      <span id="photoNote"></span>
+      <span>Hashed Emergent</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── Question sheets ────────────────────────────────── -->
+<section class="sheet" id="sheet" hidden>
+  <p class="no" id="sheetNo"></p>
+  <h2 id="sheetQ"></h2>
+  <div class="opts" id="sheetOpts"></div>
+  <button class="bk" id="sheetBack">← Back</button>
+</section>
+
+<div class="modal" id="how" hidden>
+  <div class="mcard">
+    <button class="mclose" id="howClose" aria-label="Close">×</button>
+    <h2>How SIDEQUEST decides</h2>
+    <h3>Eventability Score</h3>
+    <p>Every venue is rated 0–5 on ten factors — capacity, accessibility, event infrastructure, booking flexibility, atmosphere, networking potential, food &amp; beverage, operating hours, location relative to IBW/Devcon, and value — then averaged and doubled to a 10-point scale. Factors we could not assess show as <b>unknown</b> and count as a neutral 3.0: unknown is never treated as bad, and a venue can't rank higher just because less is known about it. Venues assessed on fewer than 8 factors display with a tilde (~8.1).</p>
+    <h3>Confidence</h3>
+    <p><b>High</b> means published capacities or official event specs plus three or more independent evidence points. <b>Medium</b> means official listings and consistent guest reports. <b>Low</b> means limited public evidence — call before you plan. Capacity ranges marked <b>estimated</b> are our reading of the venue's scale, not a published figure.</p>
+    <h3>Fit to your brief</h3>
+    <p>The shortlist starts from Eventability, then adjusts for what you told it: whether the venue is built for your format, whether your headcount sits inside its capacity range, how far it is from the anchor you picked, and the single factor that matters most for that format — networking for a mixer, operating hours for an afterparty, infrastructure for a workshop, food for a dinner. A venue that fails on size or format is marked a <b>stretch</b> and listed last, never hidden.</p>
+    <h3>Photography</h3>
+    <p id="howPhotos"></p>
+    <h3>Sources</h3>
+    <p>Coordinates and addresses from Google Maps; capacities from venue websites, Cvent and event-listing platforms; format patterns from published TOKEN2049 side-event patterns mapped to Mumbai equivalents. Nothing is fabricated. If you know a number we're missing, tell us.</p>
+    <table class="ptable" id="ptable"></table>
+  </div>
+</div>
+
+<div class="toast" id="toast" hidden></div>
+
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<script src="data/config.js"></script>
+<script src="js/photos.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
